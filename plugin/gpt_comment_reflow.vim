@@ -8,3 +8,5 @@ function! GPTCommentReflow()
     python3 from gpt_comment_reflow import main
     python3 main()
 endfunction
+
+command! GPTCommentReflow call GPTCommentReflow()
