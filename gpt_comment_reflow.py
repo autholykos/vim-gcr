@@ -22,7 +22,7 @@ Make sure every line has maximum {max_line_length} characters.""",
         "temperature": 0.5,
     }
     response = requests.post(
-        "https://api.openai.com/v1/engines/davinci-codex/completions",
+        api,
         headers=headers,
         json=data,
     )
@@ -61,7 +61,7 @@ def main():
     text = "\n".join(vim.current.buffer[:])
     text_with_docstrings = add_docstrings(api_key, text)
 
-    new_text = reflow_comment(api_key, llm_api, text_with_docstrings, max_line_length)
+    new_text = reflow_comment(llm_api, api_key, text_with_docstrings, max_line_length)
 
     if new_text:
         vim.current.buffer[:] = new_text.split("\n")
