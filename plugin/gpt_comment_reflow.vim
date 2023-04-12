@@ -4,9 +4,7 @@ function! GPTCommentReflow()
         return
     endif
 
-    python3 << EOF
-    import vim
-    from gpt_comment_reflow import main
-    main()
-    EOF
+    python3 import vim
+    python3 from gpt_comment_reflow import main
+    python3 main()
 endfunction
