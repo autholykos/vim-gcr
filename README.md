@@ -14,7 +14,7 @@ Plug 'autholykos/vim-gpt-comment-reflow'
 3. Install the required Python package:
 
 ```bash
-pip install requests
+pip install requests pynvim
 ```
 
 ## Configuration
