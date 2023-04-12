@@ -59,7 +59,7 @@ def main():
     max_line_length = int(vim.eval("g:gpt_comment_reflow_max_line_length"))
 
     text = "\n".join(vim.current.buffer[:])
-    text_with_docstrings = add_docstrings(api_key, text)
+    text_with_docstrings = add_docstrings(llm_api, api_key, text, max_line_length)
 
     new_text = reflow_comment(llm_api, api_key, text_with_docstrings, max_line_length)
 
