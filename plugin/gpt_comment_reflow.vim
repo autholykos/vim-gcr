@@ -1,4 +1,8 @@
 ifunction! GPTCommentReflow()
+    if &filetype != 'python'
+        echo "vim-gpt-comment-reflow only supports Python files."
+        return
+    endif
     python3 << EOF
     import sys
     import os
